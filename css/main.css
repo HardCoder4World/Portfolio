@@ -348,4 +348,34 @@ footer nav ul a {
     padding: 10em 15em 6em 15em;
   }
 }
+
+.circle {
+  animation: circleAnim 1s infinite alternate-reverse;
+}
+
+@-webkit-keyframes circleAnim {
+  from {
+    -webkit-transform: translate(221px, 566px);
+            transform: translate(221px, 566px);
+    z-index: 5;
+  }
+  to {
+    -webkit-transform: translate(221px, 615px);
+            transform: translate(221px, 615px);
+    z-index: 5;
+  }
+}
+
+@keyframes circleAnim {
+  from {
+    -webkit-transform: translate(221px, 566px);
+            transform: translate(221px, 566px);
+    z-index: 5;
+  }
+  to {
+    -webkit-transform: translate(221px, 615px);
+            transform: translate(221px, 615px);
+    z-index: 5;
+  }
+}
 /*# sourceMappingURL=main.css.map */

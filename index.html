@@ -31,19 +31,20 @@
     </div>
     <div class="hero">
         <div class="content">
-            <h1>Keep Learning</h1>
-            <div class="meet">
+            <h1 class="stagger1">Keep Learning</h1>
+            <div class="meet stagger1">
                 <span>👇</span>
                 <p>Dhruv Gohel</p>
             </div>
-            <svg class="scroll" xmlns="http://www.w3.org/2000/svg" width="55" height="108" viewBox="0 0 55 108">
+            <svg class="scroll stagger1" xmlns="http://www.w3.org/2000/svg" width="55" height="108"
+                viewBox="0 0 55 108">
                 <g id="Switch" transform="translate(-208 -553)">
                     <g id="Rectangle_3" data-name="Rectangle 3" transform="translate(208 553)" fill="none" stroke="#fff"
                         stroke-width="8">
                         <rect width="55" height="108" rx="27.5" stroke="none" />
                         <rect x="4" y="4" width="47" height="100" rx="23.5" fill="none" />
                     </g>
-                    <ellipse id="Ellipse_1" data-name="Ellipse 1" cx="15" cy="16.5" rx="15" ry="16.5"
+                    <ellipse class="circle" id="Ellipse_1" data-name="Ellipse 1" cx="15" cy="16.5" rx="15" ry="16.5"
                         transform="translate(221 566)" fill="#fff" />
                 </g>
             </svg>
@@ -167,6 +168,64 @@
         </nav>
         <a href="index.html" class="logo">Hard Coder 4 World</a>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+        integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"
+        integrity="sha512-wK2NuxEyN/6s53M8G7c6cRUXvkeV8Uh5duYS06pAdLq4ukc72errSIyyGQGYtzWEzvVGzGSWg8l79e0VkTJYPw=="
+        crossorigin="anonymous"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        var tl = gsap.timeline();
+        tl.from('.content', {
+            y: '-30%',
+            opacity: 0,
+            duration: 2,
+            ease: Power4.easeOut
+        })
+        tl.from('.stagger1', {
+            opacity: 0,
+            y: -50,
+            stagger: .3,
+            ease: Power4.easeOut,
+            duration: 2
+        }, "-=1.5")
+        tl.from('.hero-design', {
+            opacity: 0, y: 50, ease: Power4.easeOut,
+            duration: 3
+        }, "-=2")
+
+        gsap.from('.squaer-animation', {
+            stagger: .2,
+            scale: 0.1,
+            duration: 1,
+            ease: Back.easeOut.config(1.7)
+        })
+
+        gsap.from(".transition2", {
+            scrollTrigger: {
+                trigger: '.transition2',
+                start: "top center"
+            },
+            y: 50,
+            opacity: 50,
+            duration: 1.2,
+            stagger: .3
+        })
+
+        gsap.from(".transition3", {
+            scrollTrigger: {
+                trigger: '.transition3',
+                start: "top center"
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1.2,
+            stagger: .6
+        })
+    </script>
 
 </body>
 
